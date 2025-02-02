@@ -1,0 +1,9 @@
+
+function copyText() {
+    var text = document.getElementById("textToCopy").innerText;
+    navigator.clipboard.writeText(text).then(function() {
+        alert("Texte copié !");
+    }).catch(function(err) {
+        console.error("Erreur lors de la copie : ", err);
+    });
+}

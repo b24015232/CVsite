@@ -1,0 +1,294 @@
+
+@font-face {
+  font-family: "LeagueSpartan";
+  src: url(../fonts/league-spartan/LeagueSpartan-Bold.otf) format("truetype");
+}
+
+* {
+  font-family: 'LeagueSpartan', sans-serif;
+}
+
+
+.contact {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 50px ;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  min-height: 300px;
+  background-color: #FDF7F0;
+  border: 1px solid rgba(0, 0, 0, 0.565);
+}
+
+.contact h2 {
+  color: #000000;
+}
+
+table {
+  font-size: 90%;
+  width: 90%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+th {
+  background-color: white;
+  padding: 30px;
+}
+
+#hamburger-logo {
+    /* Pour que le curseur soit un pointeur */
+    cursor: pointer;
+}
+
+#hamburger:checked ~ #hamburger-logo,
+#hamburger:checked ~ nav {
+  /* Changement de la position pour afficher les menus */
+  transform: translate(0);
+}
+
+#hamburger-logo
+nav {
+    /* Pour qu'il y ait une animation */
+    transition: 0.7s;
+    
+}
+
+.container-section {
+  display: flex;
+  flex-direction: column; 
+  gap: 40px; 
+  align-items: center;
+  margin: 50px;
+  flex-grow: 1 ;
+  
+}
+
+li{
+    font-size: small;
+    margin: 20px 0 ;
+    padding: 10px;
+    list-style: none;
+    position: relative;
+}
+
+  
+h1 {
+  margin: auto;
+  padding-top: 150px ;
+  padding-left: 50px;
+  background-color: #FDF7F0;
+  padding-bottom: 10px ;
+  word-wrap: break-word;
+}
+
+
+.rubrique {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(0, 0, 0);
+  justify-content: center;
+  max-width: 400px;
+  min-height: 100px;
+}
+
+p {
+  font-family: "Jura", serif;
+  font-style: normal;
+  text-align: justify;
+  padding: 20px;
+  font-size: large;
+  color: #FDF7F0;
+  word-wrap: break-word;
+  text-indent: 30px;
+}
+
+strong {
+  font-family: "Jura", serif;
+  font-style: normal;
+  font-size: large;
+}
+
+h2 {
+  text-align: center;
+  color: #FDF7F0;
+  word-wrap: break-word;
+}
+
+header {
+  z-index: 1000;
+}
+ 
+
+body {
+  /* Pour coller le menu au bord, sans espace */
+  margin: 0 ;
+}
+
+.menu {
+  /* Pour que le menu reste en place quand on scroll */
+  position: fixed;
+  /* Pour que le menu ne soit pas sur le texte et que ce dernier puisse être sélectionné */
+  z-index: 1000;
+
+}
+
+#hamburger {
+  /* Pour que la checkbox ne s'affiche pas */
+  display: none;
+}
+
+#hamburger-logo {
+  /* Pour que le curseur soit un pointeur */
+  cursor: pointer;
+  width: 200px;
+  font-size: large;
+  display: block;
+  /* Pour que le menu hamburger s'affiche toujours */
+  text-align: right;
+  /* Pour que le menu hamburger soit "rangé" par défaut */
+  transform: translateX(-185px);
+  padding: 10px;
+}
+
+
+.contactButton {
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+}
+
+button {
+  background-color: #FDF7F0;
+  border : 1px solid;
+  border-radius: 2px;
+  font-size: x-large;
+}
+
+
+.mes-coordonnées {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+  gap: 20px;
+}
+
+.mes-coordonnées h3 {
+  display: flex;
+  justify-content: center;
+
+}
+
+.email, .tel {
+ display: flex;
+ justify-content: space-between;
+  
+}
+
+.email p, .tel p {
+  font-family: "Jura", serif;
+  font-style: normal;
+  justify-content: space-between;
+  color: #000000;
+  
+}
+
+
+nav {
+  overflow: hidden;
+  width: 200px;
+  /* Pour que les liens soient "rangés" par défaut */
+  transform: translateX(-200px);
+  background-color: rgb(255, 255, 255);
+}
+
+#hamburger-logo,
+nav {
+  /* Pour qu'il y ait une animation */
+  transition: 0.7s;
+}
+
+/* Lorsque #hamburger est coché, le #hamburger-logo et le nav qui sont dans le même parent changent de propriété */
+#hamburger:checked ~ #hamburger-logo,
+#hamburger:checked ~ nav {
+  /* Changement de la position pour afficher les menus */
+  transform: translate(0);
+  border: 0px ;
+}
+
+nav a, a  {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 10px;
+}
+  
+
+label {
+  background-color: #ffffff;
+  color: black;
+  position: relative;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+
+/* Ajout du soulignement au survol */
+
+
+
+li ::after {
+  content: '';
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  width: 0;
+  height: 2px; /* Épaisseur du soulignement */
+  background-color: #00000080; /* Couleur du soulignement */
+  transition: width 0.3s ease; /* Transition douce */
+}
+li :hover::after{
+  width: 100%;
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Épaisseur du soulignement */
+  background-color: #000000; /* Couleur du soulignement */
+}
+
+.text-style-colummn {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+ 
+
+#PDFbutton {
+  border-radius: 23px;
+  border: 3px solid rgb(254, 5, 5);
+  padding: 0px;
+  font-size: 70%;
+}
+
+#white {
+  display: flex;
+  color : white;
+  justify-content: center;
+}
+  
