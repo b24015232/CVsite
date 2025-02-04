@@ -8,10 +8,21 @@
     <link rel="stylesheet" href="style-desktop.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <script>
+    function copyText(button) {
+        var text = button.previousElementSibling.innerText; // Prend le texte du paragraphe avant le bouton
+        var textarea = document.createElement("textarea");
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy"); // Copie le texte
+        document.body.removeChild(textarea);
+        alert("Texte copié : " + text);
+    }
+    </script>
   <header class="menu">
     <input type="checkbox" id="hamburger">
     <label id="hamburger-logo" for="hamburger">☰</label>
@@ -28,18 +39,24 @@
 
   <h1> Contact</h1>
   <br>
-  <section class="mes-coordonnées">
-    <h3> Mes coordonnées </h3>
-    <section class="email"> 
+  <section class="coordonneées"> 
+     <h3> Mes coordonneées </h3>
       <p><strong> Email </strong></p>
-      <p> burbeck.heather@gmail.com </p>
-      <button> ⎘</button> <!-- Icône Document Copié -->
-    </section>
-    <section class="tel"> 
-      <p><strong> Téléphone </strong> </p>
-      <p> 06 13 85 62 89 </p>
-       <button> ⎘</button> <!-- Icône Document Copié -->
-    </section>
+      <section class="contact-row"> 
+        <p class="textToCopy">burbeck.heather@gmail.com</p>
+        <button onclick="copyText(this)">⎘</button>
+      </section>
+     
+      <p><strong> Téléphone </strong></p>
+      <section class="contact-row"> 
+        <p class="textToCopy">06 13 85 62 89</p>
+        <button onclick="copyText(this)">⎘</button> <!-- Icône Document Copié -->
+      
   </section>
+
+
+  </section>
+
+</section>
 </body>
 </html>
