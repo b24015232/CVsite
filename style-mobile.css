@@ -6,10 +6,14 @@
 
 
 
-* {
-  font-family: 'LeagueSpartan', sans-serif;
+p, a, a strong {
+
+    font-family: "Merriweather", serif;
 }
 
+h1, h2, h3, h4 {
+  font-family: "Rozha One", serif;
+}
 .basic-section {
   display: flex;
   flex-direction: column;
@@ -71,7 +75,6 @@ h1 {
 
 
 p {
-  font-family: "Jura", serif;
   font-style: normal;
   text-align: justify;
   padding: 20px;
@@ -239,7 +242,10 @@ nav a, a  {
   color: rgb(0, 0, 0);
   text-decoration: none;
   padding: 10px;
+  font-family: "Rozha One", serif;
 }
+
+
   
 
 label {
