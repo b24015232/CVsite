@@ -169,18 +169,10 @@ body {
     left : 0;
     margin: 10px;
     height: 40px;
-    background-color: #494949;
+    
     border:solid 2px #ff0000;
     align-items: center; 
 }
-
-.PDFButton a {
-    color: #ffffff;
-    
-              
-
-}
-
 
 .PDFButton:hover, .contactButton:hover {
   transform: scale(1.03); /* Agrandit le bouton de 10% */
