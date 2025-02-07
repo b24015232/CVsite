@@ -1,108 +1,148 @@
-
+/* Importation de la police */
 @font-face {
   font-family: "LeagueSpartan";
-  src: url(../fonts/league-spartan/LeagueSpartan-Bold.otf) format("truetype");
+  src: url("/fonts/league-spartan/LeagueSpartan-Bold.woff2") format("woff2"),
+       url("/fonts/league-spartan/LeagueSpartan-Bold.woff") format("woff"),
+       url("/fonts/league-spartan/LeagueSpartan-Bold.otf") format("opentype");
+  font-display: swap;
 }
 
 
+/* Corps de la page */
 body {
   background-image: url('image/pattern-gris.png');
-  z-index: -1;
   background-attachment: fixed;
   background-position: center;
   background-size: 150%;
+  margin: 0;
+  z-index: -1;
 }
 
-
-
-
-
-
-p, a strong {
-
-    font-family: "Merriweather", serif;
+/* Style des liens */
+a, nav a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 10px;
 }
 
-h1, h2, h3, h4, a  {
+/* Police des titres et éléments */
+h1, h2, h3, h4, a {
   font-family: "LeagueSpartan";
 }
+
+a strong {
+  font-family: "Merriweather", serif;
+}
+
 .basic-section {
+  font-family: "Merriweather", serif;
   display: flex;
   flex-direction: column;
   background-color: #fffbf6;
   border-radius: 3px;
-  min-width: unset ;
-  max-width: 340px;
-  min-height: auto;
+  max-width: 350px;
   margin-bottom: auto;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3)
-  
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Hamburger */
+#hamburger {
+  display: none;
 }
 
 #hamburger-logo {
-    /* Pour que le curseur soit un pointeur */
-    cursor: pointer;
+  cursor: pointer;
+  width: 200px;
+  font-size: large;
+  display: block;
+  margin-top: 20px;
+  text-align: right;
+  transform: translateX(-185px);
+  padding: 10px;
+  transition: 0.7s;
 }
 
 #hamburger:checked ~ #hamburger-logo,
 #hamburger:checked ~ nav {
-  /* Changement de la position pour afficher les menus */
   transform: translate(0);
 }
 
-#hamburger-logo
-nav {
-    /* Pour qu'il y ait une animation */
-    transition: 0.7s;
-    
+/* Menu fixe */
+.menu {
+  position: fixed;
+  z-index: 1000;
 }
 
-li{
+nav {
+  overflow: hidden;
+  width: 200px;
+  transform: translateX(-200px);
+  background-color: rgb(255, 255, 255);
+  transition: 0.7s;
+}
+
+#hamburger:checked ~ nav {
+  transform: translate(0);
+  border: 0;
+}
+
+/* Liens dans le menu */
+.menu > nav > ul > li {
   font-size: small;
-  margin: 20px 0 ;
+  margin: 20px 0;
   padding: 10px;
   list-style: none;
   position: relative;
 }
 
+.menu > nav > ul > li::after { /* Appliqué directement à chaque li dans le menu */
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparence pour le soulignement */
+  transition: width 0.3s ease;
+}
+
+.menu > nav > ul > li:hover::after {
+  width: 100%; /* Élargissement du soulignement au survol */
+}
+
+.menu > nav > ul > li.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000; /* Soulignement fort pour l'élément actif */
+}
 
 
+/* Header */
+header {
+  z-index: 1000;
+}
+
+/* Section principale */
 .container-section {
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   margin: 50px;
-  gap : 50px;
-
-  
+  gap: 50px;
 }
 
-  
 h1 {
   margin: auto;
-  padding-top: 150px ;
+  padding-top: 150px;
   padding-left: 50px;
   background-color: #FDF7F0;
-  padding-bottom: 10px ;
+  padding-bottom: 10px;
   word-wrap: break-word;
 }
-
-
-
-
-p {
-  font-style: normal;
-  text-align: justify;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-bottom: 30px;
-  font-size: large;
-  color: #000000;
-  word-wrap: break-word;
-  text-indent: 30px;
-}
-
-
 
 h2 {
   margin-top: 30px;
@@ -111,83 +151,49 @@ h2 {
   word-wrap: break-word;
 }
 
-header {
-  z-index: 1000;
-}
- 
-
-body {
-  /* Pour coller le menu au bord, sans espace */
-  margin: 0 ;
-}
-
-.menu {
-  /* Pour que le menu reste en place quand on scroll */
-  position: fixed;
-  /* Pour que le menu ne soit pas sur le texte et que ce dernier puisse être sélectionné */
-  z-index: 1000;
-
-}
-
-#hamburger {
-  /* Pour que la checkbox ne s'affiche pas */
-  display: none;
-}
-
-#hamburger-logo {
-  /* Pour que le curseur soit un pointeur */
-  cursor: pointer;
-  width: 200px;
+/* Paragraphes */
+p {
+  font-style: normal;
+  text-align: justify;
+  margin: 30px;
   font-size: large;
-  display: block;
-  /* Pour que le menu hamburger s'affiche toujours */
-  margin-top: 20px;
-  text-align: right;
-  /* Pour que le menu hamburger soit "rangé" par défaut */
-  transform: translateX(-185px);
-  padding: 10px;
+  color: #000000;
+  word-wrap: break-word;
+  text-indent: 10px;
 }
 
+/* Boutons */
+button {
+  background-color: #FDF7F0;
+  border: 1px solid;
+  border-radius: 2px;
+  font-size: x-large;
+}
 
-.contactButton {
+.PDFButton, .contactButton {
   display: flex;
   justify-content: flex-end;
-  z-index: 1000;
   position: fixed;
   bottom: 0;
-  right: 0;
   margin: 10px;
   height: 40px;
   align-items: center;
+  z-index: 1000;
 }
 
-.PDFButton {
-    display: flex;
-    z-index: 1000;
-    position: fixed;
-    bottom: 0;
-    left : 0;
-    margin: 10px;
-    height: 40px;
-    
-    border:solid 2px #ff0000;
-    align-items: center; 
+.contactButton {
+  right: 0;
+}
+
+.PDFButton {  
+  border: solid 2px #ff0000;
 }
 
 .PDFButton:hover, .contactButton:hover {
-  transform: scale(1.03); /* Agrandit le bouton de 10% */
+  transform: scale(1.03);
 }
 
-
-button {
-  background-color: #FDF7F0;
-  border : 1px solid;
-  border-radius: 2px;
-  font-size: x-large;
-  
-}
-
-
+/* Section de coordonnées */
 .mes-coordonnées {
   display: flex;
   flex-direction: column;
@@ -195,113 +201,64 @@ button {
   gap: 20px;
 }
 
+.coordonneées {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #cbcbcb;
+  border-radius: 3px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  margin: auto;
+  margin-top: 20px;
+}
+
 .coordonneées h3 {
   display: flex;
   justify-content: center;
-  
 }
 
-
-
-.coordonneées {
- display: flex;
- flex-direction: column;
- align-items: center;
- border: 1px solid #cbcbcb;
- border-radius: 3px;
- box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
- width: 300px;
- margin: auto;
- margin-top: 20px;
-}
-
-.coordonneées p {
-  font-family: "Jura", serif;
-  justify-content: center;
-  color: #000000;
-  font-size: 90%;
-  
-}
-
+/* Contact row */
 .contact-row {
   position: relative;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-right: 30px;
 }
 
-
-nav {
-  overflow: hidden;
-  width: 200px;
-  /* Pour que les liens soient "rangés" par défaut */
-  transform: translateX(-200px);
-  background-color: rgb(255, 255, 255);
-}
-
-#hamburger-logo,
-nav {
-  /* Pour qu'il y ait une animation */
-  transition: 0.7s;
-}
-
-/* Lorsque #hamburger est coché, le #hamburger-logo et le nav qui sont dans le même parent changent de propriété */
-#hamburger:checked ~ #hamburger-logo,
-#hamburger:checked ~ nav {
-  /* Changement de la position pour afficher les menus */
-  transform: translate(0);
-  border: 0px ;
-}
-
-nav a, a  {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  padding: 10px;
-  
-}
-
-
-  
-
+/* Label */
 label {
   background-color: #ffffff;
   color: black;
   position: relative;
   border-radius: 5px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* competences */
+.competences {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.competence-container {
+ margin: 20px;
+ max-width: 700px;
+ margin: auto;
+}
+
+/* Liste index */
+
+.ul-index {
+  display: flex;
+  flex-direction: column;
   
 }
 
 
-/* Ajout du soulignement au survol */
-
-
-
-li ::after {
-  content: '';
-  position: absolute;
-  bottom: 0; 
-  left: 0;
-  width: 0;
-  height: 2px; /* Épaisseur du soulignement */
-  background-color: #00000080; /* Couleur du soulignement */
-  transition: width 0.3s ease; /* Transition douce */
-}
-li :hover::after{
-  width: 100%;
-}
-
-.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px; /* Épaisseur du soulignement */
-  background-color: #000000; /* Couleur du soulignement */
-}
-
-
-
+.li-index {
+  list-style: none;
   
+}
