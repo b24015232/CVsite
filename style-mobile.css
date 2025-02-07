@@ -1,9 +1,7 @@
 /* Importation de la police */
 @font-face {
   font-family: "LeagueSpartan";
-  src: url("/fonts/league-spartan/LeagueSpartan-Bold.woff2") format("woff2"),
-       url("/fonts/league-spartan/LeagueSpartan-Bold.woff") format("woff"),
-       url("/fonts/league-spartan/LeagueSpartan-Bold.otf") format("opentype");
+  src: url("../fonts/league-spartan/LeagueSpartan-Bold.otf") format("opentype");
   font-display: swap;
 }
 
