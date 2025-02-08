@@ -1,13 +1,8 @@
-/* Importation de la police */
-@font-face {
-    font-family: "LeagueSpartan";
-    src: url(../Fonts/League_Spartan/static/LeagueSpartan-Bold.ttf) format("truetype");
-}
 
 
 /* Corps de la page */
 body {
-  background-image: url('image/pattern-gris.png');
+  background-color: #b3c5ff3d;
   background-attachment: fixed;
   background-position: center;
   background-size: 150%;
@@ -24,12 +19,19 @@ a, nav a {
 
 /* Police des titres et éléments */
 h1, h2, h3, h4, a {
-  font-family: "LeagueSpartan";
+  font-family: "League Spartan", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
 }
 
 a strong {
   font-family: "Merriweather", serif;
 }
+
+
+
+
 
 .basic-section {
   font-family: "Merriweather", serif;
