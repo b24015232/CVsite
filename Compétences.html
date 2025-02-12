@@ -12,6 +12,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=League+Spartan:wght@100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rozha+One&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Docu</title>
@@ -33,19 +35,61 @@
     </nav>
   </header>
   <h1> Compétences </h1>
+<br>
+  <h2> Explorer mes compétences !</h2>
+  <h2> Cliquez pour en savoir plus.</h2>
+  <section class="competences" id="menu">
+    <button class="compButton" onclick="scrollToSection('section1')"> HTML </button>
+    <button class="compButton" onclick="scrollToSection('section2')"> CSS </button>
+    <button class="compButton" onclick="scrollToSection('section3')"> C++ </button>
+    <button class="compButton" onclick="scrollToSection('section4')"> Java </button>
+    <button class="compButton" onclick="scrollToSection('section5')"> SQL </button>
+    <button class="compButton" onclick="scrollToSection('section6')"> PYTHON </button>
+</section>
 
-<div class="competence-container"> 
-  <section class="competences"> 
-    <button> HTML </button>
-    <button>  CSS </button>
-    <button> C++ </button>
-    <button> Java </button>
-    <button> SQL </button>
-    <button> PYTHON </button>
-  </section>
 
 
+<div class="content-section">
+    <section id="section1" class="section-comp">
+      <h3> HTML </h3>
+    </section>
+    <section id="section2" class="section-comp">
+      <h3> CSS </h3>
+    </section>
+    <section id="section3" class="section-comp">
+      <h3> C++ </h3>
+    </section>
+    <section id="section4" class="section-comp">
+      <h3> Java </h3>
+    </section>
+    <section id="section5" class="section-comp" >
+      <h3> SQL </h3>
+    </section>
+    <section id="section6" class="section-comp" >
+      <h3> PYTHON </h3>
+    </section>
 </div>
+<script>
+    window.addEventListener('scroll', function() {
+        let menu = document.getElementById('menu');
+        if (window.scrollY > 300) {
+            document.body.classList.add('scrolled');
+        } else {
+            document.body.classList.remove('scrolled');
+        }
+    });
+
+    function scrollToSection(sectionId) {
+            let menuHeight = document.getElementById('menu').offsetHeight;
+            let target = document.getElementById(sectionId);
+            let targetPosition = target.getBoundingClientRect().top + window.scrollY - 120; 
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        }
+</script>
+
+
+
+
   
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 /* Corps de la page */
 body {
-  background-color: #b3c5ff3d;
+  background-image: url("");
   background-attachment: fixed;
   background-position: center;
   background-size: 150%;
@@ -26,15 +26,15 @@ h1, h2, h3, h4, a {
 }
 
 a strong {
-  font-family: "Merriweather", serif;
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
-
-
-
-
 .basic-section {
-  font-family: "Merriweather", serif;
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   display: flex;
   flex-direction: column;
   background-color: #fffbf6;
@@ -44,6 +44,11 @@ a strong {
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+section {
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
 /* Hamburger */
 #hamburger {
   display: none;
@@ -68,6 +73,7 @@ a strong {
 
 /* Menu fixe */
 .menu {
+  
   position: fixed;
   z-index: 1000;
 }
@@ -122,6 +128,7 @@ nav {
 
 /* Header */
 header {
+  
   z-index: 1000;
 }
 
@@ -150,26 +157,31 @@ h2 {
   word-wrap: break-word;
 }
 
+.justify {
+  text-align: left;
+}
 /* Paragraphes */
 p {
   font-style: normal;
-  text-align: justify;
+  text-align: center;
   margin: 30px;
   font-size: large;
   color: #000000;
   word-wrap: break-word;
-  text-indent: 10px;
+ 
 }
 
 /* Boutons */
-button {
+.CCbutton {
   background-color: #FDF7F0;
   border: 1px solid;
   border-radius: 2px;
   font-size: x-large;
 }
 
-.PDFButton, .contactButton {
+.contactButton {
+  background-color: #ffffff;
+  color: black;
   display: flex;
   justify-content: flex-end;
   position: fixed;
@@ -178,18 +190,29 @@ button {
   height: 40px;
   align-items: center;
   z-index: 1000;
-}
-
-.contactButton {
   right: 0;
 }
 
 .PDFButton {  
-  border: solid 2px #ff0000;
+  background-color: #fffb7a;
+  display: flex;
+  width: 40%;
+  margin: auto;
+  position: relative;
+  padding: 10px;
+  z-index: 0;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
-.PDFButton:hover, .contactButton:hover {
-  transform: scale(1.03);
+.PDFButton > a { 
+  display: flex;
+  margin: auto;
+  color: rgb(255, 255, 255);
+}
+
+.compButton:hover, .PDFButton:hover, .contactButton:hover {
+  transform: scale(1.1);
 }
 
 /* Section de coordonnées */
@@ -226,10 +249,15 @@ button {
   padding-right: 30px;
 }
 
+.textToCopy {
+  display: flex;
+  margin-right: 10px;
+}
+
+
 /* Label */
 label {
   background-color: #ffffff;
-  color: black;
   position: relative;
   border-radius: 5px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
@@ -238,14 +266,68 @@ label {
 /* competences */
 .competences {
   display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 350px;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 30px;
+  transition: all 0.5s ease;
+  z-index: 100;
+  max-width: 800px;
   justify-content: space-around;
-  gap: 10px;
+  
+ 
 }
 
-.competence-container {
- margin: 20px;
- max-width: 700px;
- margin: auto;
+.compButton {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #060893e3;
+  border-radius: 5px;
+  color: #ffffff;
+  border: none;
+  padding: 5px;
+  justify-content: center;
+  font-size: large;
+  cursor: pointer;
+}
+.compButton:hover {
+  background: #257ccd;
+  
+}
+
+
+.scrolled .competences {
+  position: fixed;
+  left: 80%;
+  top: 150px;
+  padding: 0;
+  flex-direction: column;
+  transform: none;
+  width: 40px;
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 400px;
+  gap: 500px ;
+  
+
+}
+
+
+
+.section-comp  {
+  background-color: #257ccd;
+  font-size: x-large;
+}
+
+.section-comp > h3 {
+  background-color: #257ccd;
+  font-size: x-large;
+  padding: 20px;
 }
 
 /* Liste index */
@@ -253,11 +335,13 @@ label {
 .ul-index {
   display: flex;
   flex-direction: column;
-  
+  gap: 20px;
 }
 
 
 .li-index {
   list-style: none;
-  
+  font-size: large;
+  margin-right: 20px;
 }
+
