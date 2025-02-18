@@ -1,3 +1,38 @@
+:root {
+  --section-background-color : #fffbf6;
+  --nav-background-color : rgb(255, 255, 255);
+  --underline-menu-color : rgba(0, 0, 0, 0.5);
+  --underline-menu-color-active : #000;
+  --color-link : rgb(0, 0, 0);
+
+
+  --backgroung-h1-color : #FDF7F0;
+  --h1-color : #000000 ;
+
+  --background-h2-color : none ;
+  --h2-color : #000000;
+
+  --h3-color : #000;
+  --background-h3-color : #7a4040;
+
+  --button-background-color : #0608939b;
+  --button-color : #ffffff; 
+  --button-hovering : #257ccda2;
+  
+ --jauge-color : #f7f6d6 ;
+ --font-jauge-color : #cdc7c7;
+
+ --width-jauge : 200px;
+ --height-jauge: 10px;
+
+ --h4-color : #ffffffc7;
+ --background-h4-color : #39628c ;
+
+ --bar-comp-color : #39628c;
+ 
+ 
+}
+
 
 
 /* Corps de la page */
@@ -12,13 +47,13 @@ body {
 
 /* Style des liens */
 a, nav a {
-  color: rgb(0, 0, 0);
+  color: var(--color-link);
   text-decoration: none;
   padding: 10px;
 }
 
 /* Police des titres et éléments */
-h1, h2, h3, h4, a {
+h1, h2, h3, a {
   font-family: "League Spartan", serif;
   font-optical-sizing: auto;
   font-weight: weight;
@@ -37,12 +72,17 @@ a strong {
   font-style: normal;
   display: flex;
   flex-direction: column;
-  background-color: #fffbf6;
+  background-color: var(--section-background-color);
   border-radius: 3px;
   max-width: 350px;
   margin-bottom: auto;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  padding: 15px;
 }
+
+
+
+
 
 section {
   font-family: "Roboto", serif;
@@ -82,7 +122,7 @@ nav {
   overflow: hidden;
   width: 200px;
   transform: translateX(-200px);
-  background-color: rgb(255, 255, 255);
+  background-color: var(--nav-background-color);
   transition: 0.7s;
 }
 
@@ -107,7 +147,7 @@ nav {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: rgba(0, 0, 0, 0.5); /* Transparence pour le soulignement */
+  background-color: var(--underline-menu-color); /* Transparence pour le soulignement */
   transition: width 0.3s ease;
 }
 
@@ -122,7 +162,7 @@ nav {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #000; /* Soulignement fort pour l'élément actif */
+  background-color: var(--underline-menu-color-active);/* Soulignement fort pour l'élément actif */
 }
 
 
@@ -145,7 +185,8 @@ h1 {
   margin: auto;
   padding-top: 150px;
   padding-left: 50px;
-  background-color: #FDF7F0;
+  background-color: var(--backgroung-h1-color);
+  color: var(--h1-color);
   padding-bottom: 10px;
   word-wrap: break-word;
 }
@@ -153,7 +194,8 @@ h1 {
 h2 {
   margin-top: 30px;
   text-align: center;
-  color: #373737;
+  background-color: var(--backgroung-h2-color);
+  color: var(--h2-color);
   word-wrap: break-word;
 }
 
@@ -166,53 +208,72 @@ p {
   text-align: center;
   margin: 30px;
   font-size: large;
-  color: #000000;
+  color: var(--p-color);
   word-wrap: break-word;
  
 }
 
 /* Boutons */
+
+button {
+    display: flex;
+    border: none;
+    border-radius: 5px;
+    color : var(--button-color);
+    background-color: var(--button-background-color);;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+}
+
+
 .CCbutton {
-  background-color: #FDF7F0;
-  border: 1px solid;
-  border-radius: 2px;
   font-size: x-large;
 }
 
+.contactButtons {
+ padding: 10px;
+}
+
 .contactButton {
-  background-color: #ffffff;
-  color: black;
-  display: flex;
-  justify-content: flex-end;
   position: fixed;
   bottom: 0;
   margin: 10px;
   height: 40px;
-  align-items: center;
   z-index: 1000;
   right: 0;
+  padding: 10px;
 }
 
 .PDFButton {  
-  background-color: #fffb7a;
-  display: flex;
   width: 40%;
   margin: auto;
   position: relative;
   padding: 10px;
   z-index: 0;
-  padding: 10px;
   margin-bottom: 20px;
+  padding: 15px;
+  
 }
-
-.PDFButton > a { 
+.contentConcButton {
   display: flex;
-  margin: auto;
-  color: rgb(255, 255, 255);
+  justify-content: center;
 }
 
-.compButton:hover, .PDFButton:hover, .contactButton:hover {
+.compButton {
+  display: flex;
+  flex-wrap: wrap;
+  color: #ffffff;
+  border: none;
+  padding: 5px;
+  justify-content: center;
+  font-size: large;
+  cursor: pointer;
+}
+
+.compButton:hover, .PDFButton:hover, .contactButton:hover, .CCbutton:hover, .contactButtons:hover{
   transform: scale(1.1);
+  background-color: var(--button-hovering);
 }
 
 /* Section de coordonnées */
@@ -276,27 +337,7 @@ label {
   z-index: 100;
   max-width: 800px;
   justify-content: space-around;
-  
- 
 }
-
-.compButton {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #060893e3;
-  border-radius: 5px;
-  color: #ffffff;
-  border: none;
-  padding: 5px;
-  justify-content: center;
-  font-size: large;
-  cursor: pointer;
-}
-.compButton:hover {
-  background: #257ccd;
-  
-}
-
 
 .scrolled .competences {
   position: fixed;
@@ -312,23 +353,86 @@ label {
   display: flex;
   flex-direction: column;
   margin-top: 400px;
-  gap: 500px ;
+  gap : 50px;
+  
+}
+
+.section-comp  {
+  position: relative;
+  display: flex;
+  font-size: x-large;
+  gap: 40px;
+  margin-bottom: 500px;
+  flex-direction: column;
+  
+}
+
+.section-comp::after  {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 10px;
+  background-color: var(--bar-comp-color); /* Transparence pour le soulignement */
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.projectDone {
+  display: flex;
+}
+
+h4 {
+  color : var(--h4-color);
+  font-family: "League Spartan", serif;
+  font-optical-sizing: auto;
+  font-weight: lighter;
+  font-style: normal;
+  background-color: var(--background-h4-color);
+  padding: 10px;
+}
+
+.section-comp > h3 {
+  color: var(--h3-color);
+  font-size: xx-large;
+  padding: 20px;
+}
+
+.jauge {
+  display: flex;
+  height: var(--height-jauge);
+  width: var(--width-jauge);
+  background-color: var(--font-jauge-color);
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 40px;
+  border : 1px solid #000;
+  border-radius: 20px;
+  margin-left: 30px;
   
 
 }
 
-
-
-.section-comp  {
-  background-color: #257ccd;
-  font-size: x-large;
+.cube-jauge {
+  width: 10%;
+  height: var(--height-jauge);
+  background-color: var(--jauge-color);
+  
 }
 
-.section-comp > h3 {
-  background-color: #257ccd;
-  font-size: x-large;
-  padding: 20px;
+.premier-cube {
+  border-top-left-radius: 19px;
+  border-bottom-left-radius: 19px;
+  width: 10%;
+  height: var(--height-jauge);
+  background-color: var(--jauge-color);
 }
+
 
 /* Liste index */
 
