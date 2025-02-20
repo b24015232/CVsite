@@ -114,14 +114,18 @@
   }
 
 
-
+  .flag {
+    position: relative;
+    display: flex;
+    font-size: x-large;
+    flex-direction: row;
+  }
 
   .section-comp  {
     position: relative;
     display: flex;
     font-size: x-large;
     flex-direction: row;
-    
   }
 
   .section-comp p {
@@ -153,5 +157,7 @@
     padding-right: 300px ;
     padding-left: 30px;
   }
+
+
 
 }
