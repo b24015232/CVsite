@@ -25,8 +25,8 @@
  --width-jauge : 200px;
  --height-jauge: 10px;
 
- --h4-color : #ffffffc7;
- --background-h4-color : #39628c ;
+ --h4-color : #5c5d5dfc;
+ --background-h4-color : #014d9900 ;
 
  --bar-comp-color : #39628c;
  
@@ -361,10 +361,8 @@ label {
   position: relative;
   display: flex;
   font-size: x-large;
-  gap: 40px;
-  margin-bottom: 500px;
   flex-direction: column;
-  
+  align-items: center;
 }
 
 .section-comp::after  {
@@ -376,15 +374,26 @@ label {
   background-color: var(--bar-comp-color); /* Transparence pour le soulignement */
 }
 
+.section-comp p {
+  display: flex;
+  padding: 20px;
+  margin: auto;
+  
+}
+
 .project {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: large;
   
 }
 
 .projectDone {
   display: flex;
+  flex-direction: column;
 }
 
 h4 {
@@ -409,13 +418,11 @@ h4 {
   width: var(--width-jauge);
   background-color: var(--font-jauge-color);
   justify-content: flex-start;
-  align-items: center;
+  margin: auto;
   margin-right: 40px;
   border : 1px solid #000;
   border-radius: 20px;
   margin-left: 30px;
-  
-
 }
 
 .cube-jauge {
@@ -444,8 +451,10 @@ h4 {
 
 
 .li-index {
-  list-style: none;
   font-size: large;
   margin-right: 20px;
 }
 
+li {
+  list-style: none;
+}

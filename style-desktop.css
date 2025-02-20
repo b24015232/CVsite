@@ -120,9 +120,15 @@
     position: relative;
     display: flex;
     font-size: x-large;
-    gap: 40px;
-    margin-bottom: 500px;
-    flex-direction: column;
+    flex-direction: row;
+    
+  }
+
+  .section-comp p {
+    display: flex;
+    padding: 0px;
+    margin: 0;
+    
   }
   
   .section-comp::after  {
@@ -138,6 +144,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    flex-direction: row;
+
   }
   
   .projectDone {
