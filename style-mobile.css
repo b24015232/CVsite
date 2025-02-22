@@ -29,7 +29,8 @@
  --background-h4-color : #014d9900 ;
 
  --bar-comp-color : #39628c;
- 
+ --background-color-footer: #efefef5e;
+
  
 }
 
@@ -486,4 +487,29 @@ h4 {
 
 li {
   list-style: none;
+}
+
+
+footer {
+  position: relative;
+ display: flex;
+ gap: 10px;
+ padding-top: 70px;
+ background-color: var(--background-color-footer);
+ flex-wrap: wrap;
+ 
+ padding-bottom: 20px;
+}
+
+footer > h3 {
+  position: absolute;
+  top :0;
+  left: 10px;
+  font-size: xx-large;
+}
+
+footer > a {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 40px;
 }
