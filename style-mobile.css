@@ -268,7 +268,7 @@ button {
   border: none;
   padding: 5px;
   justify-content: center;
-  font-size: large;
+  font-size: small;
   cursor: pointer;
 }
 
@@ -515,7 +515,7 @@ footer > a {
   display: flex;
   flex-direction: column;
   font-size: large;
-  gap: 100px;
+  gap : 50px;
   justify-content: center;
 
 }
