@@ -56,7 +56,7 @@
     font-size: medium;
   }
 
-  ul {
+  .menu > nav > ul  {
     display: flex;
     flex-direction: row;
   }
@@ -149,6 +149,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     flex-direction: row;
+   
 
   }
   
@@ -171,5 +172,11 @@
    padding-bottom: 20px;
   }
 
+  .tools {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+   
+  }
 
 }
