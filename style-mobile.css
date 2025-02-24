@@ -19,7 +19,7 @@
   --button-color : #ffffff; 
   --button-hovering : #257ccda2;
   
- --jauge-color : #f7f6d6 ;
+ --jauge-color : #FDF7F0;;
  --font-jauge-color : #cdc7c7;
 
  --width-jauge : 200px;
@@ -28,7 +28,7 @@
  --h4-color : #5c5d5dfc;
  --background-h4-color : #014d9900 ;
 
- --bar-comp-color : #39628c;
+ --bar-comp-color : #e2e2e2;
  --background-color-footer: #efefef5e;
 
  
@@ -524,4 +524,8 @@ footer > a {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+a {
+  text-decoration: underline;
 }
