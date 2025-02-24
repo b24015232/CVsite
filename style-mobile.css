@@ -28,7 +28,7 @@
  --h4-color : #5c5d5dfc;
  --background-h4-color : #014d9900 ;
 
- --bar-comp-color : #e2e2e2;
+ --bar-comp-color : #e2e2e200;
  --background-color-footer: #efefef5e;
 
  
@@ -38,7 +38,7 @@
 
 /* Corps de la page */
 body {
-  background-image: url("");
+  background-image: url("image/pattern-cube2.png");
   background-attachment: fixed;
   background-position: center;
   background-size: 150%;
@@ -343,7 +343,8 @@ label {
 
 .scrolled .competences {
   position: fixed;
-  left: 80%;
+  left: auto;
+  right: 60px;
   top: 150px;
   padding: 0;
   flex-direction: column;
